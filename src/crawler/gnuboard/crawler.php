@@ -10,9 +10,11 @@ class gnuboardCrawerService{
      * @param $body Array array(query, display, start, sort)
      * @param $foramt String json/xml
      */
-    public function crawer(){
+    public function crawer($url){
         $client = new Client();
-        $crawler = $client->request('GET', 'https://www.symfony.com/blog/');
+        $crawler = $client->request('GET', $url);
+        
+        return $crawler;
     }
     
 
